@@ -1,18 +1,15 @@
 import { useState } from 'react'
+import CardComponent from './components/useState/cardComponent'
+import CardAddDel from './components/classadd/del'
 
-import './App.css'
-import FirstProgram from './components/useState/useStateEx'
-import FetchData from './components/useState/fetch'
-import AxiosExample from './components/useState/axios'
 
 function App() {
 
 
   return (
     <>
-      {/* <FirstProgram/> */}
-      {/* <FetchData/> */}
-      <AxiosExample/>
+      {/* <CardComponent/> */}
+      <CardAddDel/>
     </>
   )
 }
