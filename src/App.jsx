@@ -1,7 +1,5 @@
-
-import AxiosExample from './components/useEffect/axios'
-import UseEffectFetch from './components/useEffect/fetch'
-import UseEffectExample from './components/useEffect/useEffect'
+import React from 'react'
+import UseMemoExample from './components/useMemo/useMemo'
 
 
 
@@ -10,9 +8,7 @@ function App() {
 
   return (
     <>
-     {/* <UseEffectExample/> */}
-     {/* <UseEffectFetch/> */}
-     <AxiosExample/>
+     <UseMemoExample/>
     </>
   )
 }
