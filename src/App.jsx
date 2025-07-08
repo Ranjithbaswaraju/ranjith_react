@@ -1,15 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import FirstProgram from './components/useStateEx'
+import FirstProgram from './components/useState/useStateEx'
+import FetchData from './components/useState/fetch'
+import AxiosExample from './components/useState/axios'
 
 function App() {
 
 
   return (
     <>
-      <FirstProgram/>
+      {/* <FirstProgram/> */}
+      {/* <FetchData/> */}
+      <AxiosExample/>
     </>
   )
 }
