@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card';
 
 function BasicExample({title,role,salary,ind,removeHandler}) {
   return (
-    <Card style={{ width: '200px', height:'300px',border:'2px solid black'}}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card style={{ width: '300px', height:'400px',border:'2px solid black'}}>
+      <Card.Img variant="top" src="https://media.gettyimages.com/id/1215119911/photo/looking-directly-up-at-the-skyline-of-the-financial-district-in-central-london-stock-image.jpg?s=612x612&w=gi&k=20&c=rIsNW_iVWpfHt77QBOI40_0bz8ea3XetPsy0kplL2FQ=" width="300px"/>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>

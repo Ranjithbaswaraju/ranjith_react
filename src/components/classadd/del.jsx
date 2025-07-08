@@ -7,7 +7,7 @@ class CardAddDel extends Component{
         employeeData:[]
     }
     Handler=()=>{
-        const name=["Ranjith",'Sukumar',"Aarthi",'Rahul Nani','Ammulu Reddy','Nikitha Reddy','Sirisha Reedy']
+        const name=["Ranjith","Aarthi",'Rahul Nani','Ammulu Reddy','Nikitha Reddy','Sirisha Reedy','Oshiyn']
         const roles=["Front-end Developer","Back-End Developer","React-Developer","Java-Developer","Python-Developer"]
         const updatedNames=name[Math.floor(Math.random()*name.length)]
         const updatedRoles=roles[Math.floor(Math.random()*roles.length)]
@@ -35,17 +35,27 @@ class CardAddDel extends Component{
     render(){
         return(
             <>
-            <button onClick={this.Handler}>Add Card</button>
-            {
-                this.state.employeeData.length>0?
-            this.state.employeeData.map((emp,index)=>{
-                return(
-                    <BasicExample title={`Name :${emp.name}`} ind={index} role={`Role :${emp.role}`} salary={`Salary:${emp.salary}` } removeHandler={this.removeHandler}/>
-                )
-            })  
-        :
-        <h3>No Cards Found</h3>
-        }
+           <>
+  <button onClick={this.Handler}>Add Card</button>
+
+  {this.state.employeeData.length > 0 ? (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+      {this.state.employeeData.map((emp, index) => (
+        <BasicExample
+          key={index}
+          title={`Name: ${emp.name}`}
+          ind={index}
+          role={`Role: ${emp.role}`}
+          salary={`Salary: ${emp.salary}`}
+          removeHandler={this.removeHandler}
+        />
+      ))}
+    </div>
+  ) : (
+    <h3>No Cards Found</h3>
+  )}
+</>
+
             </>
 
         )
