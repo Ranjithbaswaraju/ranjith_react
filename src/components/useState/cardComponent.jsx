@@ -1,19 +1,36 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BasicExample({title,role,salary,ind,removeHandler}) {
+function BasicExample({title,price,description,category,src}) {
   return (
-    <Card style={{ width: '300px', height:'400px',border:'2px solid black'}}>
-      <Card.Img variant="top" src="https://media.gettyimages.com/id/1215119911/photo/looking-directly-up-at-the-skyline-of-the-financial-district-in-central-london-stock-image.jpg?s=612x612&w=gi&k=20&c=rIsNW_iVWpfHt77QBOI40_0bz8ea3XetPsy0kplL2FQ=" width="300px"/>
+    <Card style={{ width: '300px', height:'450px',border:'2px solid black' ,textAlign:'center'}}>
+      <Card.Title ><h3 style={{
+    display: "-webkit-box",
+    WebkitBoxOrient: "vertical",
+    WebkitLineClamp: 1,
+    overflow: "hidden",
+    height:"40px",
+    textOverflow: "ellipsis"
+  }}>{title}</h3></Card.Title>
+      <Card.Img variant="top" src={src} width="200px" height="200px"/>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        
         <Card.Text>
-          {role}
-          <div>
-            {salary}
-          </div>
+          {`Price : ${price}`}
         </Card.Text>
-        <Button variant="primary" onClick={()=>removeHandler(ind)}>Go somewhere</Button>
+        <Card.Text>
+          {`Category : ${category}`}
+        </Card.Text>
+         <Card.Text  style={{
+    display: "-webkit-box",
+    WebkitBoxOrient: "vertical",
+    WebkitLineClamp: 3,
+    overflow: "hidden",
+    textOverflow: "ellipsis"
+  }}>
+          {description}
+        </Card.Text>
+        <Button variant="primary">Buy Now</Button>
       </Card.Body>
     </Card>
   );
