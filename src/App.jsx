@@ -3,6 +3,7 @@ import UseRefExample from './components/useRef/useRef'
 import UseRef2 from './components/useRef/useRef2'
 import UncontolledComponent from './components/useRef/Uncontrolled'
 import ControlledComponent from './components/useRef/controlled'
+import UncontrolledValidation from './components/useRef/UncontrolledValidation'
 
 
 
@@ -14,7 +15,8 @@ function App() {
       {/* <UseRefExample/> */}
       {/* <UseRef2/> */}
       {/* <UncontolledComponent/> */}
-      <ControlledComponent/>
+      {/* <ControlledComponent/> */}
+      <UncontrolledValidation/>
     </>
   )
 }
