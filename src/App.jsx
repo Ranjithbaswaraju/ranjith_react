@@ -1,5 +1,5 @@
 
-import CurdAddDel from "./components/CURD/curd1"
+import CurdUpdation from "./components/CURD/curdupdation"
 
 
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <CurdAddDel/>
+      <CurdUpdation/>
     </>
   )
 }
