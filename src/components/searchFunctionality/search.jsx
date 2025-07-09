@@ -1,35 +1,36 @@
 import React, { useMemo, useState } from "react";
 
-const SearchFunctionality = () => {
-  const items = ["apple", "banana", "orange", "mango", "grapes"];
-  const [search, setSearch] = useState("");
+const SearchFunctionality = ()=>{
+  const items=["apple","banana","mango","grapes"]
 
-  const Handler = (e) => {
-    setSearch(e.target.value);
-  };
+  const[search,setSearch]=useState("")
 
-  const filterData = useMemo(() => {
-    return items.filter((each) =>
-      each.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [search]);
+  const handler=(e)=>{
+    setSearch(e.target.value)
+  }
 
-  return (
+  const newData=useMemo(()=>{
+    return items.filter((each)=>
+    each.toLowerCase().includes(search.toLowerCase()))
+  })
+  
+
+  return(
     <>
-      <input
-        type="text"
-        value={search}
-        onChange={Handler}
-        placeholder="Search fruits..."
-      />
-
-      {filterData.length === 0 ? (
-        <p>No Data Found</p>
-      ) : (
-        filterData.map((each, index) => <p key={index}>{each}</p>)
-      )}
+    <input type="text" value={search} onChange={handler}/>
+    {
+      newData.length===0 ? (<p style={{color:'red'}}>No items found</p>) :
+      (
+        newData.map((item)=>{
+          return(
+            <ul>
+              <li>{item}</li>
+            </ul>
+          )
+        })
+      )
+    }
     </>
-  );
-};
-
-export default SearchFunctionality;
+  )
+}
+export default SearchFunctionality
