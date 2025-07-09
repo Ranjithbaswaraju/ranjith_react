@@ -1,5 +1,5 @@
 
-import UseReducer2 from "./components/useReducer/useReducer2"
+import UseReducerAdd from "./components/useReducer/AddUseReducer"
 
 
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <UseReducer2/>
+      <UseReducerAdd/>
     </>
   )
 }
