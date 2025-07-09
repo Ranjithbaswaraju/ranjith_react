@@ -1,5 +1,7 @@
 
-import UseReducerAdd from "./components/useReducer/AddUseReducer"
+import CurdAddDel from "./components/CURD/curd1"
+
+
 
 
 
@@ -8,7 +10,7 @@ function App() {
 
   return (
     <>
-      <UseReducerAdd/>
+      <CurdAddDel/>
     </>
   )
 }
