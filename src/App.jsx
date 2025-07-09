@@ -4,6 +4,8 @@ import UseRef2 from './components/useRef/useRef2'
 import UncontolledComponent from './components/useRef/Uncontrolled'
 import ControlledComponent from './components/useRef/controlled'
 import UncontrolledValidation from './components/useRef/UncontrolledValidation'
+import ControlledValidation from './components/useRef/controlledValidation'
+import TableUncontrolledValidation from './components/useRef/tableUncontrolled'
 
 
 
@@ -16,7 +18,9 @@ function App() {
       {/* <UseRef2/> */}
       {/* <UncontolledComponent/> */}
       {/* <ControlledComponent/> */}
-      <UncontrolledValidation/>
+      {/* <UncontrolledValidation/> */}
+      {/* <ControlledValidation/> */}
+      <TableUncontrolledValidation/>
     </>
   )
 }
