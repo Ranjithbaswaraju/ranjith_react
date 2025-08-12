@@ -7,10 +7,7 @@ const AxiosExample=()=>{
     const Handler=async()=>{
         const finalData=await axios.get("https://fakestoreapi.com/products")
         setData(finalData.data)
-        // console.log(finalData)
     }
-  
-
     return(
         <>
         <button onClick={Handler}>Show Data</button>
@@ -24,7 +21,6 @@ const AxiosExample=()=>{
             })
         }
         </>
-        
     )
 }
 export default AxiosExample;

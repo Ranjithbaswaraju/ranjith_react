@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       {/* <FirstProgram/> */}
-      {/* <FetchData/> */}
-      <AxiosExample/>
+      <FetchData/>
+      {/* <AxiosExample/> */}
     </>
   )
 }
