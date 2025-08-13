@@ -37,3 +37,4 @@ function BasicExample({title,price,description,category,src}) {
 }
 
 export default BasicExample;
+
