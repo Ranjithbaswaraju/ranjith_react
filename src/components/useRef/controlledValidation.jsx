@@ -57,12 +57,11 @@
 
 
 import React, { useState } from "react";
-
-
 const ControlledValidation=()=>{
 
-    const[model,setModel]=useState('')
-    const[error,setError]=useState('')
+    const[model,setModel]=useState('');
+
+    const[error,setError]=useState('');
 
     const modelValidation=(value)=>{
         let err=""
@@ -73,10 +72,8 @@ const ControlledValidation=()=>{
         else if(!Regex.test(value)){
             err="please enter only samsung model"
         }
-        return err
-        
+        return err   
     }
-
     const modelHandler=(event)=>{
         const enteredModel=event.target.value
         setModel(enteredModel)
@@ -89,17 +86,13 @@ const ControlledValidation=()=>{
         else{
             setError("")
         }
-
     }
-
     const onSubmit=(event)=>{
         event.preventDefault()
         if(error){
             alert("Please fill properly")
         }
     }
-
-
 return(
     <>
     <form onSubmit={onSubmit}>
@@ -112,8 +105,9 @@ return(
     Submit
   </button>
 </form>
-
     </>
-)
+  )
 }
 export default ControlledValidation;
+
+
