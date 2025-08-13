@@ -15,19 +15,16 @@ const UseReducer1 = () => {
     const intialState={
         count:0
     }
-
     const IncrementHandler=()=>{
         dispatch({
             type:"INCREMENT_COUNT"
         })
     }
-
     const DecrementHandler=()=>{
         dispatch({
             type:'DECREMENT_COUNT'
         })
     }
-
     const[currentSate,dispatch]=useReducer(reducer,intialState)
     return(
         <>
@@ -38,3 +35,5 @@ const UseReducer1 = () => {
     )
 };
 export default UseReducer1
+
+
