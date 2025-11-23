@@ -39,9 +39,8 @@
 //         setTodos(todosCopy)
 //         setSelectItem('')
 //         setInput("")
-        
+
 //     }
-    
 
 //     return(
 //         <>
@@ -68,67 +67,130 @@
 // }
 // export default CurdUpdation
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
+// const CurdUpdation = () => {
+//   const [input, setInput] = useState("");
+//   const [todos, setTodos] = useState([]);
+//   const [selectItem, setSelectItem] = useState("");
+
+//   const inputHandler = (e) => {
+//     setInput(e.target.value);
+//   };
+
+//   const addHandler = (e) => {
+//     e.preventDefault();
+
+//     if (input) {
+//       setTodos([...todos, input]);
+//     }
+//     setInput("");
+//   };
+
+//   const removeHandler = (ind) => {
+//     const updatedTodo = todos.filter((_, index) => index !== ind);
+//     setTodos(updatedTodo);
+//   };
+
+//   const updateHandler = (ind) => {
+//     setSelectItem(ind);
+//     const inputValue = todos[ind];
+//     setInput(inputValue);
+//   };
+
+//   const updatedTodo = (e) => {
+//     e.preventDefault();
+
+//     const todosCopy = [...todos];
+//     todosCopy[selectItem] = input;
+
+//     setTodos(todosCopy);
+//     setInput("");
+//     setSelectItem("");
+//   };
+
+//   return (
+//     <>
+//       <form onSubmit={selectItem || selectItem === 0 ? updatedTodo : addHandler}>
+//         <input type="text" onChange={inputHandler} value={input} />
+//         <button type="submit">{selectItem || selectItem === 0 ? "Update Todo" : "Add Todo"}</button>
+//       </form>
+//       <ol>
+//         {todos?.map((item, index) => {
+//           return (
+//             <li key={index}>
+//               {item}{" "}
+//               <button onClick={() => removeHandler(index)}>Delete Todo</button>{" "}
+//               <button onClick={() => updateHandler(index)}>Update Todo</button>
+//             </li>
+//           );
+//         })}
+//       </ol>
+//     </>
+//   );
+// };
+
+// export default CurdUpdation;
+
+import React, { useState } from "react";
 const CurdUpdation = () => {
-  const [input, setInput] = useState("");
+  const [name, setName] = useState("");
   const [todos, setTodos] = useState([]);
   const [selectItem, setSelectItem] = useState("");
 
-  const inputHandler = (e) => {
-    setInput(e.target.value);
+  const changehandler = (e) => {
+    setName(e.target.value);
   };
 
-  const addHandler = (e) => {
+  const add = (e) => {
     e.preventDefault();
-
-    if (input) {
-      setTodos([...todos, input]);
+    if (name) {
+      setTodos([...todos, name]);
     }
-    setInput("");
+    setName("");
   };
-
-  const removeHandler = (ind) => {
-    const updatedTodo = todos.filter((_, index) => index !== ind);
+  const remove = (ind) => {
+    const updatedTodo = todos.filter((item, index) => index != ind);
     setTodos(updatedTodo);
   };
 
-  const updateHandler = (ind) => {
+  const update = (ind) => {
     setSelectItem(ind);
-    const inputValue = todos[ind];
-    setInput(inputValue);
+    const updated = todos[ind];
+
+    setName(updated);
   };
 
-  const updatedTodo = (e) => {
+  const updatingTodo = (e) => {
     e.preventDefault();
-
     const todosCopy = [...todos];
-    todosCopy[selectItem] = input;
-
+    todosCopy[selectItem] = name;
     setTodos(todosCopy);
-    setInput("");
     setSelectItem("");
+    setName("");
   };
 
   return (
     <>
-      <form onSubmit={selectItem || selectItem === 0 ? updatedTodo : addHandler}>
-        <input type="text" onChange={inputHandler} value={input} />
-        <button type="submit">{selectItem || selectItem === 0 ? "Update Todo" : "Add Todo"}</button>
+      <form onSubmit={selectItem || selectItem === 0 ? updatingTodo : add}>
+        <input value={name} onChange={changehandler} />
+
+        <button type="submit">
+          {selectItem || selectItem === 0 ? "Update Todo" : "Add Todo"}
+        </button>
       </form>
       <ol>
         {todos?.map((item, index) => {
           return (
-            <li key={index}>
-              {item}{" "}
-              <button onClick={() => removeHandler(index)}>Delete Todo</button>{" "}
-              <button onClick={() => updateHandler(index)}>Update Todo</button>
-            </li>
+            <>
+              <li>{item}</li>
+              <button onClick={() => remove(index)}>Delete</button>
+              <button onClick={() => update(index)}>Update Todo</button>
+            </>
           );
         })}
       </ol>
     </>
   );
 };
-
 export default CurdUpdation;
