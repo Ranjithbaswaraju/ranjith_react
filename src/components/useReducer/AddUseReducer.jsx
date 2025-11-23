@@ -56,40 +56,103 @@
 // export default AddUseReducer;
 
 
-import React, { act, useReducer, useState } from "react";
+// import React, { act, useReducer, useState } from "react";
 
+
+// const reducer=(state,action)=>{
+//     switch(action.type){
+//         case "ADD":
+//             return {...state,todos:[...state.todos,action.payload]}
+//         case "REMOVE":
+//             return {...state,todos:state.todos.filter((_,index)=>index!==action.payload)}
+//     }
+// }
+
+// const AddUseReducer=()=>{
+//     const initialState={
+//         todos:[]
+//     }
+
+//     const[name,setName]=useState("")
+
+//     const[currentSate,dispatch]=useReducer(reducer,initialState)
+
+//     const ranjith=(e)=>{
+//         setName(e.target.value)
+//     }
+
+//     const baswaraju=(e)=>{
+//         e.preventDefault()
+//         dispatch({
+//             type:"ADD",
+//             payload:name
+//         })
+//     }
+
+//     const remove=(index)=>{
+//         dispatch({
+//             type:'REMOVE',
+//             payload:index
+//         })
+//     }
+
+//     return(
+//         <>
+//         <input type='text' value={name} onChange={ranjith}/>
+//         <button onClick={baswaraju}>Add_Todo</button>
+//         {
+//             currentSate.todos.map((item,index)=>{
+//                 return(
+//                     <>
+//                     <li>{item}</li>
+//                     <button onClick={()=>remove(index)}>DELETE</button>
+//                     </>
+//                 )
+//             })
+//         }
+        
+        
+//         </>
+//     )
+// }
+// export default AddUseReducer;
+
+
+import React, { useReducer, useState } from "react";
+import { Button } from "react-bootstrap";
 
 const reducer=(state,action)=>{
     switch(action.type){
         case "ADD":
-            return {...state,todos:[...state.todos,action.payload]}
-        case "REMOVE":
-            return {...state,todos:state.todos.filter((_,index)=>index!==action.payload)}
+            return{...state,todos:[...state.todos,action.payload]}
+        case 'REMOVE':
+            return{...state,todos:state.todos.filter((_,index)=>index!==action.payload)}
     }
 }
 
-const AddUseReducer=()=>{
-    const initialState={
+const AddUseReducer = () => {
+
+
+    const intialState={
         todos:[]
     }
+    const[currentSate,dispatch]=useReducer(reducer,intialState)
+    const[name,setName]=useState('')
 
-    const[name,setName]=useState("")
-
-    const[currentSate,dispatch]=useReducer(reducer,initialState)
-
-    const ranjith=(e)=>{
+    const handler=(e)=>{
         setName(e.target.value)
     }
 
-    const baswaraju=(e)=>{
+    const addHandler=(e)=>{
         e.preventDefault()
         dispatch({
-            type:"ADD",
+            type:'ADD',
             payload:name
         })
+        setName("")
     }
 
-    const remove=(index)=>{
+    const remvoeHandler=(index)=>{
         dispatch({
             type:'REMOVE',
             payload:index
@@ -98,21 +161,23 @@ const AddUseReducer=()=>{
 
     return(
         <>
-        <input type='text' value={name} onChange={ranjith}/>
-        <button onClick={baswaraju}>Add_Todo</button>
+        <input type="text" onChange={handler} value={name}/>
+        <button onClick={addHandler}>Add</button>
+        <ol>
         {
             currentSate.todos.map((item,index)=>{
                 return(
                     <>
                     <li>{item}</li>
-                    <button onClick={()=>remove(index)}>DELETE</button>
+                    <button onClick={()=>remvoeHandler(index)}>Delete</button>
                     </>
+                    
                 )
             })
         }
-        
-        
+        </ol>
         </>
     )
-}
+  
+};
 export default AddUseReducer;
