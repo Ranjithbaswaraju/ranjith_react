@@ -10,6 +10,7 @@ const reducer=(state,action)=>{
             return state;
     }
 }
+
 const UseReducer1 = () => {
 
     const intialState={
@@ -35,5 +36,4 @@ const UseReducer1 = () => {
     )
 };
 export default UseReducer1
-
 
