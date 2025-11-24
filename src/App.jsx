@@ -17,8 +17,8 @@ function App() {
      {/* <UseEffectExample/> */}
      {/* <UseEffectFetch/> */}
      {/* <AxiosExample/> */}
-     <CardFake/>
-     {/* <TableFake/> */}
+     {/* <CardFake/> */}
+     <TableFake/>
     </>
   )
 }
