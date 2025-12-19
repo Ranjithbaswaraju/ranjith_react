@@ -1,5 +1,5 @@
 
-import React, { act, action, useReducer, useState } from "react";
+import React, {action, useReducer, useState } from "react";
 
 const reducer=(state,action)=>{
     switch(action.type){
@@ -51,3 +51,6 @@ return(<>
 }
 
 export default UseReducer2
+
+
+
