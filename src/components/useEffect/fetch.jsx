@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 
@@ -6,33 +7,36 @@ const UseEffectFetch=()=>{
 
     useEffect(()=>{
         const fetchData=async()=>{
-            const response=await fetch("https://fakestoreapi.com/products")
-            const finalData=await response.json()
-            setData(finalData)
-            console.log(finalData)
+            try{
+                const data=await fetch("https://fakestoreapi.com/products")
+                const finalData=await data.json()
+                console.log(finalData)
+                setData(finalData)
+            }   
+            catch(err){
+                console.log(err)
+            }
         }
         fetchData()
-    },[])
+    })
 
-    return(
-        <>
-           {
-                data.map((item)=>{{
-                    return(
-                        <>
-                        <p>{item.id}</p>
-                        <p>{item.title}</p>
-                        </>
-                    )
-                }})
-            }
+return(
+<>
+{
+    data.length > 0 ? (
+        data.map((item)=>{
+            return(
+                <>
+<p>{item.id}</p>
 
-        </>
-    )
-
-
+                </>
+            )
+        })
+    ):(<p>Not found</p>)
 }
-export default UseEffectFetch
 
 
-
+</>)
+    
+}
+export default UseEffectFetch;

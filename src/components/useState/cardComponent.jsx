@@ -39,33 +39,58 @@
 // export default BasicExample;
 
 
+// import Button from 'react-bootstrap/Button';
+// import Card from 'react-bootstrap/Card';
+
+// function BasicExample({title,category,image,description}) {
+//   return (
+//     <Card style={{ width: '300px' ,height:'500px',border:'2px solid red',textAlign:'center'}}>
+      
+//       <Card.Body>
+//         <Card.Title ><h3
+//          style={{
+//             display: '-webkit-box',
+//             WebkitBoxOrient: 'vertical',
+//             WebkitLineClamp: 2,
+//             overflow: 'hidden',
+//             textOverflow: 'ellipsis',
+//             height:"40px"
+//         }}>{title}</h3></Card.Title>
+//         <Card.Subtitle><h4>{`Category : ${category}`}</h4></Card.Subtitle>
+//         <Card.Img  src={image} width="200px" height="200px" />
+//         <Card.Text style={{
+//           display:'-webkit-box',
+//           webkitBoxOrient:'vertical',
+//           WebkitLineClamp:3,
+//           overflow:'hidden',
+//           textOverflow:'ellipsis'
+//         }}>
+//           {description}
+//         </Card.Text>
+//         <Button variant="primary">Go somewhere</Button>
+//       </Card.Body>
+//     </Card>
+//   );
+// }
+
+// export default BasicExample;
+
+
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BasicExample({title,category,image,description}) {
+function BasicExample({title,description,image,category}) {
   return (
-    <Card style={{ width: '300px' ,height:'500px',border:'2px solid red',textAlign:'center'}}>
-      
+    <Card style={{ width: '400px',height:"500px",border:'2px solid red',display:'flex',flexWrap:'wrap' ,justifyContent:"center",alignItems:"center",textAlign:'center'}}>
+      <Card.Img variant="top" src={image} style={{height:'300px',width:"300px"}}/>
       <Card.Body>
-        <Card.Title ><h3
-         style={{
-            display: '-webkit-box',
-            WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 2,
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            height:"40px"
-        }}>{title}</h3></Card.Title>
-        <Card.Subtitle><h4>{`Category : ${category}`}</h4></Card.Subtitle>
-        <Card.Img  src={image} width="200px" height="200px" />
-        <Card.Text style={{
-          display:'-webkit-box',
-          webkitBoxOrient:'vertical',
-          WebkitLineClamp:3,
-          overflow:'hidden',
-          textOverflow:'ellipsis'
-        }}>
-          {description}
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>
+         {description}
+        </Card.Text>
+        <Card.Text>
+         <p>Category :{category}</p>
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
