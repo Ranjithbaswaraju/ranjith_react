@@ -22,21 +22,22 @@
 
 import React, { useRef, useState } from "react";
 
+
 const UseRef2=()=>{
    const[count,setCount]=useState(0)
-   const inputRef=useRef("")
+   const prevRef=useRef(null)
 
-   const clickHandler=()=>{
-      inputRef.current=count
+   const incrementHandler=()=>{
+      prevRef.current=count
       setCount(count+1)
    }
-
    return(
       <>
-      <p>Count : {count}</p>
-      <p>Previous Count : {inputRef.current}</p>
-      <button onClick={clickHandler}>Click</button>
+      <p>count :{count}</p>
+      <p>Previous Count :{prevRef.current}</p>
+      <button onClick={incrementHandler}>Increment</button>
+      
       </>
    )
 }
-export default UseRef2
+export default UseRef2;

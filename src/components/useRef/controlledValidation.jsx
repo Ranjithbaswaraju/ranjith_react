@@ -56,58 +56,118 @@
 // export default ControlledValidation
 
 
+// import React, { useState } from "react";
+// const ControlledValidation=()=>{
+
+//     const[model,setModel]=useState('');
+
+//     const[error,setError]=useState('');
+
+//     const modelValidation=(value)=>{
+//         let err=""
+//         let Regex=/^Samsung/i
+//         if(!value){
+//             err="please enter model name"
+//         }
+//         else if(!Regex.test(value)){
+//             err="please enter only samsung model"
+//         }
+//         return err   
+//     }
+//     const modelHandler=(event)=>{
+//         const enteredModel=event.target.value
+//         setModel(enteredModel)
+
+//         const error=modelValidation(enteredModel)
+
+//         if(error){
+//             setError(error)
+//         }
+//         else{
+//             setError("")
+//         }
+//     }
+//     const onSubmit=(event)=>{
+//         event.preventDefault()
+//         if(error){
+//             alert("Please fill properly")
+//         }
+//     }
+// return(
+//     <>
+//     <form onSubmit={onSubmit}>
+//   <div className="form-group">
+//     <label htmlFor="username">Email address:</label>
+//     <input type="text" className="form-control" id="username" value={model} onChange={modelHandler} /><br></br>
+//     <span style={{color:'red'}}>{error}</span>
+//   </div>
+//   <button type="submit" className="btn btn-default">
+//     Submit
+//   </button>
+// </form>
+//     </>
+//   )
+// }
+// export default ControlledValidation;
+
+
 import React, { useState } from "react";
-const ControlledValidation=()=>{
 
-    const[model,setModel]=useState('');
-
-    const[error,setError]=useState('');
+const ControlledComponent=()=>{
+    const[fromError,setFormError]=useState("")
+    const[model,setModel]=useState("")
 
     const modelValidation=(value)=>{
-        let err=""
+        let err=''
         let Regex=/^Samsung/i
         if(!value){
-            err="please enter model name"
+            err="Please enter model name"
         }
         else if(!Regex.test(value)){
-            err="please enter only samsung model"
+            err='Please enter correct Model'
         }
-        return err   
+        return err
     }
-    const modelHandler=(event)=>{
-        const enteredModel=event.target.value
+
+    
+
+    const enterHnadler=(e)=>{
+        e.preventDefault()
+
+        const enteredModel=e.target.value
         setModel(enteredModel)
 
         const error=modelValidation(enteredModel)
 
         if(error){
-            setError(error)
+            setFormError(error)
         }
         else{
-            setError("")
+            setFormError("")
+        }
+
+    }
+
+    const ranjith=(e)=>{
+        e.preventDefault()
+        if(fromError){
+            alert("please fill properly")
         }
     }
-    const onSubmit=(event)=>{
-        event.preventDefault()
-        if(error){
-            alert("Please fill properly")
-        }
-    }
-return(
+
+    return(
     <>
-    <form onSubmit={onSubmit}>
+    <form onSubmit={ranjith}>
   <div className="form-group">
-    <label htmlFor="username">Email address:</label>
-    <input type="text" className="form-control" id="username" value={model} onChange={modelHandler} /><br></br>
-    <span style={{color:'red'}}>{error}</span>
+    <label htmlFor="text">Enter Model Name:</label>
+    <input type="text" className="form-control" id="email" onChange={enterHnadler} value={model}/>
+    <p style={{color:"red"}}>{fromError}</p>
   </div>
   <button type="submit" className="btn btn-default">
     Submit
   </button>
 </form>
-    </>
-  )
+
+    </>)
 }
-export default ControlledValidation;
-
-
+export default ControlledComponent;
