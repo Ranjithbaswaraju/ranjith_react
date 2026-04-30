@@ -36,4 +36,3 @@ const UseReducer1 = () => {
     )
 };
 export default UseReducer1
-
