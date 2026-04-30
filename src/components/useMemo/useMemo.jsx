@@ -36,7 +36,6 @@
 // }
 // export default UseMemoExample
 
-import React, { useMemo, useState } from "react";
 
 // const UseMemoExample=()=>{
 //     const[riceQty,setRiceQty]=useState(0)
