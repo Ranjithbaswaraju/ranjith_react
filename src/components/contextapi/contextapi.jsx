@@ -22,28 +22,28 @@
 // }
 // export default ContextApi;
 
-
 import React, { createContext, useContext } from "react";
-const MessageContext=createContext()
+
+
+const messageContext=createContext()
 
 const ContextApi=()=>{
-    let message='Hello Ranjith'
+    const message='Hello World';
+  return(
+      <messageContext.Provider value={message}>
+        <p>App</p>
+        <ChildComponent/>
+    </messageContext.Provider>
+  )
+}
 
-    return(
-        <>
-        <MessageContext.Provider value={message}>
-            <h1>ContextApi</h1>
-            <ChildComponent/>
-        </MessageContext.Provider>
-        </>
-    )
-}
+
 const ChildComponent=()=>{
-    let ranjith=useContext(MessageContext)
+    const message=useContext(messageContext)
     return(
         <>
-        <p>{ranjith}</p>
+        <h3>{message}</h3>
         </>
     )
 }
-export default ContextApi
+export default ContextApi;
