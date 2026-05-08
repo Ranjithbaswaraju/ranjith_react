@@ -108,7 +108,7 @@ const PaginationComponent = () => {
     <>
       <h1 style={{ textAlign: "center" }}>Fake Store Products</h1>
       {/* Products */}
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<h1 style={{ textAlign: "center" }}>Fake Store Products Loading...</h1>}>
         <div
           style={{
             width: "100vw",
