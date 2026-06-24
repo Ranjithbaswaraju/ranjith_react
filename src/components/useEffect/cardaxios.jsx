@@ -74,7 +74,7 @@ const CardFake = () => {
                 category={item.category}
                 image={item.image}
                 description={item.description}
-                category={item.category}
+                
               />
             </>
           );
