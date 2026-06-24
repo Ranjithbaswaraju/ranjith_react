@@ -26,7 +26,6 @@ import React, { createContext, useContext } from "react";
 
 
 const messageContext=createContext()
-
 const ContextApi=()=>{
     const message='Hello World';
   return(
@@ -36,8 +35,6 @@ const ContextApi=()=>{
     </messageContext.Provider>
   )
 }
-
-
 const ChildComponent=()=>{
     const message=useContext(messageContext)
     return(
@@ -47,3 +44,5 @@ const ChildComponent=()=>{
     )
 }
 export default ContextApi;
+
+
