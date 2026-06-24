@@ -19,8 +19,8 @@ function App() {
       {/* <UncontolledComponent/> */}
       {/* <ControlledComponent/> */}
       {/* <UncontrolledValidation/> */}
-      {/* <ControlledValidation/> */}
-      <TableUncontrolledValidation/>
+      <ControlledValidation/>
+      {/* <TableUncontrolledValidation/> */}
     </>
   )
 }

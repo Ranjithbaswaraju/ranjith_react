@@ -2,18 +2,16 @@ import React, { useState } from "react";
 
 
 const ControlledComponent=()=>{
-    const[name,setName]=useState('')
+    const[data,setData]=useState()
 
-
-    const ClickHandler=(e)=>{
-        setName(e.target.value)
+    const changeHandler=(e)=>{
+        setData(e.target.value)
     }
-
+    
     return(
         <>
-        <input type="text" value={name} onChange={ClickHandler}/>
+        <input type="text" onChange={changeHandler} value={data}/>
         </>
     )
 }
 export default ControlledComponent
-

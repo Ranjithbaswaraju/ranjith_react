@@ -1,5 +1,7 @@
 // import React, { useRef } from "react";
 
+import { useRef } from "react"
+
 // const UncontolledComponent=()=>{
 //     const inputRef=useRef(null)
 
@@ -18,25 +20,25 @@
 // }
 // export default UncontolledComponent
 
-import React, { useRef } from "react";
-
 
 const UncontolledComponent=()=>{
+    const inputRef=useRef(null)
 
-    const inputRef=useRef("")
-    const Handler=(e)=>{
+    const ranjith=(e)=>{
         e.preventDefault()
         alert(`Entered Name is : `+inputRef.current.value)
-
     }
+
+
     return(
         <>
-
-       <form onSubmit={Handler}>
-         <input type="text" ref={inputRef} />
+       <form onSubmit={ranjith}>
+        <input ref={inputRef} type="text" placeholder="Enter Name"/>
         <button type="submit">Submit</button>
        </form>
+
         </>
     )
 }
-export default UncontolledComponent;
+export default UncontolledComponent
+

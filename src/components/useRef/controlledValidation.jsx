@@ -112,7 +112,6 @@
 
 
 import React, { useState } from "react";
-
 const ControlledComponent=()=>{
     const[fromError,setFormError]=useState("")
     const[model,setModel]=useState("")
@@ -128,33 +127,24 @@ const ControlledComponent=()=>{
         }
         return err
     }
-
-    
-
     const enterHnadler=(e)=>{
         e.preventDefault()
-
         const enteredModel=e.target.value
         setModel(enteredModel)
-
         const error=modelValidation(enteredModel)
-
         if(error){
             setFormError(error)
         }
         else{
             setFormError("")
         }
-
     }
-
     const ranjith=(e)=>{
         e.preventDefault()
         if(fromError){
             alert("please fill properly")
         }
     }
-
     return(
     <>
     <form onSubmit={ranjith}>
