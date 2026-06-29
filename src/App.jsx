@@ -17,8 +17,8 @@ const App=()=>{
     {/* <ProfileHidden/> */}
     {/* <Parent/> */}
     {/* <KeysComponent/> */}
-    {/* <Timer/> */}
-    <Pagination/>
+    <Timer/>
+    {/* <Pagination/> */}
     </>
   )
 }
