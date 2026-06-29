@@ -1,5 +1,6 @@
 import React, { act, useReducer, useState } from "react";
 
+
 const reducer=(state,action)=>{
     switch(action.type){
         case 'Add':
@@ -8,7 +9,6 @@ const reducer=(state,action)=>{
             return {...state,todos:state.todos.filter((_,index)=>index!=action.payload)}
     }
 }
-
 const AddUseReducer = () => {
   const initialState = {
     todos: [],
@@ -22,16 +22,13 @@ const AddUseReducer = () => {
         payload:name
     })
   }
-
   const deleteHandler=(index)=>{
     dispatch({
         type:"Del",
         payload:index
     })
   }
-
   const [currentSate, dispatch] = useReducer(reducer, initialState);
-
   return <>
   <input type="text" onChange={(e)=>setName(e.target.value)}/>
   <button onClick={submitHandler}>ADD</button>
@@ -43,15 +40,11 @@ const AddUseReducer = () => {
             <li>{item}</li>
             <button onClick={()=>deleteHandler(index)}>Delete</button>
             </>
-        )
-        
-    })
-    
+        ) 
+    }) 
   }
-  
-</ol>
-  
-  
+</ol> 
   </>;
 };
 export default AddUseReducer;
+
