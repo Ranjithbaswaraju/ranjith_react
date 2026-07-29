@@ -17,7 +17,12 @@ const FetchCardsSort = ({ search, sort, pricefilter }) => {
   };
 
   const filteredData = data.filter((item) => {
-    return item.title.toLowerCase().includes(search.toLowerCase());
+    return ( 
+        item.title.toLowerCase().includes(search.toLowerCase()) ||
+     item.description.toLowerCase().includes(search.toLowerCase()) ||
+     item.category.toLowerCase().includes(search.toLowerCase()) ||
+item.rating.toString().includes(search)
+    );
   });
 
   let sortedData = [...filteredData];
