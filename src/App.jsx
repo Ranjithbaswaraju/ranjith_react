@@ -1,4 +1,5 @@
-import Timer from "./components/StopWatch";
+import FlowPipe from "./FlowpipCompany/flowPipe";
+
 
 
 
@@ -8,7 +9,7 @@ const App=()=>{
 
     <>
   
-    <Timer/>
+    <FlowPipe/>
     
     </>
   )
