@@ -1,4 +1,5 @@
-import FlowPipe from "./FlowpipCompany/flowPipe";
+import Parent from "./components/CroweTechologies/parent";
+
 
 
 
@@ -9,8 +10,8 @@ const App=()=>{
   return(
 
     <>
-  
-    <FlowPipe/>
+  <Parent/>
+    
     
     </>
   )
