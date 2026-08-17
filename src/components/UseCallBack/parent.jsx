@@ -19,6 +19,7 @@
 // export default Parent
 
 
+
 // Increasig count using the Callback
 
 
@@ -44,9 +45,8 @@
 // export default Parent
 
 
+
 // LIGHT THEME USING CALLBACK
-
-
 
 // import React, { useCallback, useState } from "react";
 // import Child from "./Child";
@@ -72,8 +72,6 @@
 // export default Parent
 
 // Wihtout using the CHild COMPOENNT
-
-
 import React, { useCallback, useState } from "react";
 
 const Parent=()=>{
@@ -81,7 +79,7 @@ const Parent=()=>{
     const[theme,setTheme]=useState("light")
 
     const changeTheme=useCallback(()=>{
-        setTheme((prev)=>prev === "light" ? "dark" : "light")
+        setTheme((prev)=>prev === "light" ? "dark" : "light" )
     },[])
     return(
         <div style={{backgroundColor:theme=== "light" ? "white" : "black",
@@ -95,3 +93,4 @@ const Parent=()=>{
     )
 }
 export default Parent
+

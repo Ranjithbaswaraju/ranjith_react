@@ -15,6 +15,7 @@
 // export default Child;
 
 
+
 // PASSING PROPS THROUH CHILD TO PARENT TO COUNTER EXAMPLE
 
 
@@ -30,17 +31,24 @@
 // }
 // export default Child;
 
+
 //LIGHT DARK THEME USING CALLBACK
 
 
 
-import React from "react";
-const Child=({callBack})=>{
-    return(
-        <>
-        <p>Child Component</p>
-        <button onClick={callBack}>Change Theme</button>
-        </>
-    )
-}
-export default Child
+// import React from "react";
+// const Child=({callBack})=>{
+//     return(
+//         <>
+//         <p>Child Component</p>
+//         <button onClick={callBack}>Change Theme</button>
+//         </>
+//     )
+// }
+// export default Child
+
+
+
+
+
+
